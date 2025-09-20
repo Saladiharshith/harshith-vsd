@@ -97,11 +97,17 @@ cd yosys
 sudo apt install make build-essential clang bison flex \
     libreadline-dev gawk tcl-dev libffi-dev git \
     graphviz xdot pkg-config python3 libboost-system-dev \
-    libboost-python-dev libboost-filesystem-dev zlib1g-dev  
+    libboost-python-dev libboost-filesystem-dev zlib1g-dev
+
+## 📷 Install verification
+<img width="751" height="441" alt="image" src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758393550/ubuntu_Running_-_Oracle_VirtualBox_21-09-2025_00_08_05_vk90ni.png" />
 
 ---
 sudo apt-get update  
 sudo apt-get install iverilog
+
+## 📷 Install verification
+<img width="751" height="441" alt="image" src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758393046/ubuntu_Running_-_Oracle_VirtualBox_20-09-2025_23_55_06_kxiavg.png" />
 
 make config-gcc  
 git submodule update --init --recursive  
@@ -111,3 +117,6 @@ sudo make install
 ---
 sudo apt-get update  
 sudo apt install gtkwave
+
+## 📷 Install verification
+<img width="751" height="441" alt="image" src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758393230/ubuntu_Running_-_Oracle_VirtualBox_21-09-2025_00_03_23_rxfspn.png" />
