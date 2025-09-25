@@ -23,4 +23,3 @@ module mux (
 );
     assign y = sel ? b : a;
 endmodule
-
