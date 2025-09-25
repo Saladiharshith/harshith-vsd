@@ -1,27 +1,26 @@
-# Day 1 — RTL Workshop
+# Day 1: Introduction to Verilog
 
-## 📝 Topics Covered
-- Basics of RTL design using Verilog
-- Writing a simple counter module
-- Creating a testbench
-- Simulation and verification flow
+## Objectives
+- Learn the basics of Verilog HDL.
+- Understand the structure of a simple Verilog module.
+- Write and simulate a basic RTL design.
 
----
+## Topics Covered
+1. Introduction to Verilog
+2. Structure of a Verilog Program
+3. Writing a simple combinational circuit
+4. Simulation using Icarus Verilog & GTKWave
 
-## 📘 Example RTL Code
+## Example: 2-to-1 Multiplexer
 
-### Counter Module (`counter.v`)
+### Code (mux.v)
 ```verilog
-module counter (
-    input wire clk,
-    input wire reset,
-    output reg [3:0] count
+module mux (
+    input wire a,
+    input wire b,
+    input wire sel,
+    output wire y
 );
-    always @(posedge clk or posedge reset) begin
-        if (reset)
-            count <= 4'b0000;
-        else
-            count <= count + 1;
-    end
+    assign y = sel ? b : a;
 endmodule
 
