@@ -67,6 +67,56 @@ View waveform in GTKWave
 ```
 gtkwave counter.vcd
 ```
+<a href="Day_1/mux_yosys.png" target="_blank">
+  <img src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758955103/Screenshot_2025-09-25_174810_o1ydhe.png" alt="MUX schematic" width="600" >
+</a>
+
+SYNTHESIS  LAB YOSYS
+---
+### Synthesis with Yosys
+
+1. Install yosys if not already installed:
+   ```bash
+   sudo apt-get install yosys
+2.Run yosys and read the Verilog design:
+```
+yosys
+yosys> read_verilog mux.v
+yosys> synth -top mux
+yosys> show
+```
+3.The synth command performs synthesis, and show generates a logic schematic for the module.
+By default, it opens a schematic in a GUI (using Graphviz).
+
+4.You can also write the synthesized netlist into a file:
+```
+yosys> write_verilog mux_netlist.v
+```
+OUTPUT FORM
+---
+
+<a href="Day_1/mux_yosys.png" target="_blank">
+  <img src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758955103/Screenshot_2025-09-25_184111_az2tl7.png" alt="MUX schematic" width="600" >
+</a>
+
+---
+
+6.EXPECTED OUTPUT
+
+1.Yosys will display a synthesis report in the terminal.
+
+2.A schematic window showing the 2-to-1 multiplexer with inputs a, b, sel and output y.
+
+3.Netlist (mux_netlist.v) is generated with only primitive gates.
+
+---
+7.SUMMARY OF DAY 1
+
+1.Learned Verilog basics.
+
+2.Designed and simulated a 2-to-1 MUX.
+
+3.Synthesized the design with Yosys.
 
 
 
