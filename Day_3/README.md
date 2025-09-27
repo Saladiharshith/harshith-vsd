@@ -177,9 +177,9 @@ Functionality:
 ---
 
 ## Summary
-- ##Focus:## Optimization techniques for combinational and sequential circuits in digital design, with practical Verilog labs.
+- Focus: Optimization techniques for combinational and sequential circuits in digital design, with practical Verilog labs.
 
-- ##Topics Covered:##
+-  Topics Covered:
 
   1. Constant Propagation: Replacing variables with constant values to simplify logic and           improve circuit efficiency.
   2.State Optimization: Reducing states and optimizing encoding in finite state machines to use     less logic and power.
