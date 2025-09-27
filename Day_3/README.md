@@ -27,7 +27,7 @@ Benefits:
  - Reduced Complexity: Simpler logic, smaller circuit.
  - Performance Improvement: Faster execution and reduced delays.
  - Resource Optimization: Fewer gates or flip-flops required.
-<img src="https://raw.githubusercontent.com/username/repository/branch/path/to/image.png" alt="Description" width="300">
+
 
 
 ---
@@ -85,7 +85,7 @@ Follow the steps
 ```
 opt_clean -purge
 ```
-
+<img src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758996574/WhatsApp_Image_2025-09-27_at_11.31.49_PM_1_jcekyw.jpg" alt="Description" width="300">
 
 ---
 ## Lab 2
@@ -100,7 +100,7 @@ Code Analysis:
 - Acts as a multiplexer:
   - ```y = 1``` if```a``` is true.
   - ```y = b``` if ```a``` is false.
-
+<img src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758996574/WhatsApp_Image_2025-09-27_at_11.31.50_PM_shyjr9.jpg" alt="Description" width="300">
 
 ---
 ## Lab 3
@@ -112,7 +112,7 @@ endmodule
 ```
 Functionality:
 2-to-1 multiplexer; ```y = a ? 1 : b``` (outputs ```1``` when ```a``` is true, otherwise ```b```).
-
+<img src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758997471/Screenshot_2025-09-27_235359_cworwj.png" alt="Description" width="300">
 
 ---
 ## Lab 4
@@ -130,7 +130,7 @@ Functionality:
     - If ```a = 0```, ```y = !c```.
 - Logic simplifies to:
   ```y = a ? c : !c```
-
+<img src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758997471/Screenshot_2025-09-27_235416_todvhx.png" alt="Description" width="300">
 
 ---
 ## Lab 5
@@ -148,12 +148,15 @@ endmodule
 ```
 Functionality:
 
-- D flip-flop with:
+   - D flip-flop with:
    -Asynchronous reset to 0
    -Loads constant ```1``` when not in reset
+<img src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758996574/WhatsApp_Image_2025-09-27_at_11.31.50_PM_1_u9ygbz.jpg" alt="Description" width="300">
 
 ---
+
 ## Lab 6
+
 Verilog code:
 ```
 module dff_const2(input clk, input reset, output reg q);
@@ -167,10 +170,12 @@ end
 endmodule
 ```
 Functionality:
-
-- D flip-flop always sets output ```q``` to ```1``` (regardless of reset or clock).
+ -D flip-flop always sets output ```q``` to ```1``` (regardless of reset or clock).
+ 
+<img src="https://res.cloudinary.com/dg6kvs6ij/image/upload/v1758996574/WhatsApp_Image_2025-09-27_at_11.31.49_PM_nqxxqp.jpg" alt="Description" width="300">
 
 ---
+
 ## Summary
 - ##Focus:## Optimization techniques for combinational and sequential circuits in digital design, with practical Verilog labs.
 
