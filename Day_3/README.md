@@ -27,6 +27,8 @@ Benefits:
  - Reduced Complexity: Simpler logic, smaller circuit.
  - Performance Improvement: Faster execution and reduced delays.
  - Resource Optimization: Fewer gates or flip-flops required.
+<img src="https://raw.githubusercontent.com/username/repository/branch/path/to/image.png" alt="Description" width="300">
+
 
 ---
 
