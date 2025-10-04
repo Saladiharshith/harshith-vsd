@@ -1,3 +1,6 @@
+SALADI HARSHITH
+---
+
 Week 2 – BabySoC Fundamentals & Functional Modelling
 🎯 Objective:
 The main goal of this week is to understand the fundamental concepts of System-on-Chip (SoC) design and to get hands-on experience with functional modelling using simulation tools like Icarus Verilog and GTKWave.
