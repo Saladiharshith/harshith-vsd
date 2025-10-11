@@ -402,7 +402,7 @@ The Week 3 task has been successfully completed with:
 The BabySoC design is confirmed to be functionally correct at the gate level and meets basic timing requirements for the target technology.
 
 ---
-*Completion Date:* October 10, 2025  
+*Completion Date:* October 11, 2025  
 *Tools:* Yosys, Icarus Verilog, GTKWave  
 *Status:* ✅ ALL TASKS COMPLETED SUCCESSFULLY
 
