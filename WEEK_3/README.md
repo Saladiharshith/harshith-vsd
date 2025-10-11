@@ -1,9 +1,9 @@
-
 # Week 3 Task - Post-Synthesis GLS & STA Fundamentals
-SALADI HARSHITH
+
+SALADI HARSHITH 
 
 ## Objective
-To understand and perform Gate-Level Simulation (GLS) after synthesis, validate functionality, and get introduced to Static Timing Analysis (STA) concepts with practical experiments using OpenSTA.
+To understand and perform *Gate-Level Simulation (GLS)* after synthesis, validate functionality, and get introduced to *Static Timing Analysis (STA)* concepts with practical experiments using OpenSTA.
 
 ---
 
@@ -11,12 +11,12 @@ To understand and perform Gate-Level Simulation (GLS) after synthesis, validate 
 
 ### Synthesis Results
 
-Design: BabySoC  
-Synthesis Tool: Yosys ABC  
-Technology: Generic Gate Library  
-Synthesis Date: 2025-10-11  
+*Design:* BabySoC  
+*Synthesis Tool:* Yosys ABC  
+*Technology:* Generic Gate Library  
+*Synthesis Date:* 2025-10-11  
 
-Synthesis Log Summary:
+*Synthesis Log Summary:*
 
 === babySoC Synthesis Report ===
 
@@ -39,16 +39,16 @@ Minimum path delay: 0.8 ns
 
 ### Gate-Level Simulation (GLS) Results
 
-GLS Tool: Icarus Verilog  
-Test Vectors Applied: 3 comprehensive test cases  
-Simulation Duration: 200 time units  
+*GLS Tool:* Icarus Verilog  
+*Test Vectors Applied:* 3 comprehensive test cases  
+*Simulation Duration:* 200 time units  
 
-Test Case Results:
-- Test 1: Input = 8'h0A (10) → Output = 8'h15 (21) ✅ PASS
-- Test 2: Input = 8'h1F (31) → Output = 8'h3F (63) ✅ PASS  
-- Test 3: Input = 8'h08 (8) → Output = 8'h11 (17) ✅ PASS
+*Test Case Results:*
+- *Test 1:* Input = 8'h0A (10) → Output = 8'h15 (21) ✅ PASS
+- *Test 2:* Input = 8'h1F (31) → Output = 8'h3F (63) ✅ PASS  
+- *Test 3:* Input = 8'h08 (8) → Output = 8'h11 (17) ✅ PASS
 
-GLS Waveform Observations:
+*GLS Waveform Observations:*
 - All control signals (valid_out, ready) transition correctly
 - Data outputs appear after expected clock cycles
 - No timing violations detected
@@ -56,7 +56,7 @@ GLS Waveform Observations:
 
 ### Functional vs GLS Comparison
 
-VERIFICATION RESULT: ✅ FULLY MATCHING
+*VERIFICATION RESULT: ✅ FULLY MATCHING*
 
 | Aspect | Functional Simulation | Gate-Level Simulation | Status |
 |--------|----------------------|----------------------|---------|
@@ -65,7 +65,7 @@ VERIFICATION RESULT: ✅ FULLY MATCHING
 | Reset Behavior | Immediate clear | Immediate clear | ✅ Match |
 | State Transitions | IDLE→PROCESS→DONE | IDLE→PROCESS→DONE | ✅ Match |
 
-Comparison Summary:
+*Comparison Summary:*
 The Gate-Level Simulation outputs perfectly match the functional simulation results, confirming that:
 - The synthesized netlist maintains correct logical functionality
 - No functional errors were introduced during synthesis
@@ -78,45 +78,45 @@ The Gate-Level Simulation outputs perfectly match the functional simulation resu
 
 ### STA Course Summary - Key Concepts
 
-#### 🔹 Setup and Hold Time Checks
-- Setup Time: Minimum time data must be stable BEFORE clock edge
-- Hold Time: Minimum time data must be stable AFTER clock edge  
-- Violations: Cause metastability and data corruption
+#### 🔹 *Setup and Hold Time Checks*
+- *Setup Time:* Minimum time data must be stable BEFORE clock edge
+- *Hold Time:* Minimum time data must be stable AFTER clock edge  
+- *Violations:* Cause metastability and data corruption
 
-#### 🔹 Timing Slack
-- Definition: Difference between required time and arrival time
-- Positive Slack: Timing requirement is met
-- Negative Slack: Timing violation exists
-- Zero Slack: Meets timing exactly
+#### 🔹 *Timing Slack*
+- *Definition:* Difference between required time and arrival time
+- *Positive Slack:* Timing requirement is met
+- *Negative Slack:* Timing violation exists
+- *Zero Slack:* Meets timing exactly
 
-#### 🔹 Clock Definitions
-- Clock Period: Time for one complete clock cycle
-- Clock Skew: Difference in clock arrival times at different registers
-- Clock Latency: Delay from clock source to register clock pin
-- Clock Uncertainty: Margin for jitter and variation
+#### 🔹 *Clock Definitions*
+- *Clock Period:* Time for one complete clock cycle
+- *Clock Skew:* Difference in clock arrival times at different registers
+- *Clock Latency:* Delay from clock source to register clock pin
+- *Clock Uncertainty:* Margin for jitter and variation
 
-#### 🔹 Timing Paths
-- Four Types:
-  1. Register-to-Register (most common)
-  2. Input-to-Register
-  3. Register-to-Output
-  4. Input-to-Output
+#### 🔹 *Timing Paths*
+- *Four Types:*
+  1. *Register-to-Register* (most common)
+  2. *Input-to-Register*
+  3. *Register-to-Output*
+  4. *Input-to-Output*
 
-#### 🔹 Static Timing Analysis Process
-1. Read Design - Netlist and constraints
-2. Build Timing Graph - Create timing model
-3. Calculate Delays - Cell + interconnect delays
-4. Check Constraints - Setup/hold checks
-5. Generate Reports - Slack, violations, critical paths
+#### 🔹 *Static Timing Analysis Process*
+1. *Read Design* - Netlist and constraints
+2. *Build Timing Graph* - Create timing model
+3. *Calculate Delays* - Cell + interconnect delays
+4. *Check Constraints* - Setup/hold checks
+5. *Generate Reports* - Slack, violations, critical paths
 
-#### 🔹 Key STA Terminology
-- Tclk: Clock period
-- Tsetup: Setup time requirement  
-- Thold: Hold time requirement
-- Tcq: Clock-to-Q delay
-- Tcomb: Combinational logic delay
-- WNS: Worst Negative Slack
-- TNS: Total Negative Slack
+#### 🔹 *Key STA Terminology*
+- *Tclk:* Clock period
+- *Tsetup:* Setup time requirement  
+- *Thold:* Hold time requirement
+- *Tcq:* Clock-to-Q delay
+- *Tcomb:* Combinational logic delay
+- *WNS:* Worst Negative Slack
+- *TNS:* Total Negative Slack
 
 ---
 
@@ -124,11 +124,11 @@ The Gate-Level Simulation outputs perfectly match the functional simulation resu
 
 ### OpenSTA Setup and Configuration
 
-Tools Used:
-- OpenSTA Version: 1.0.0
-- Design: BabySoC synthesized netlist
-- Clock Frequency: 100MHz (10ns period)
-- Technology: sky130_fd_sc_hd
+*Tools Used:*
+- *OpenSTA Version:* 1.0.0
+- *Design:* BabySoC synthesized netlist
+- *Clock Frequency:* 100MHz (10ns period)
+- *Technology:* sky130_fd_sc_hd
 
 ### OpenSTA Input Script
 
@@ -158,7 +158,7 @@ report_clock_properties
 
 ### Timing Analysis Results
 
-Setup Timing Report:
+*Setup Timing Report:*
 
 ==============================================================================
 Setup 'clk'
@@ -175,7 +175,7 @@ data_out[1]               8.6 ns         9.5 ns         8.6 ns      +0.9 ns
 data_out[0]               8.7 ns         9.5 ns         8.7 ns      +0.8 ns
 
 
-Hold Timing Report:
+*Hold Timing Report:*
 
 ==============================================================================
 Hold 'clk'  
@@ -190,14 +190,14 @@ data_out[4]               0.7 ns         0.5 ns         0.7 ns      +0.2 ns
 
 ### Critical Path Analysis
 
-Critical Path Details:
-- Path: data_reg[7] → arithmetic_logic → data_out[0]
-- Total Delay: 8.7 ns
-- Clock Period: 10.0 ns  
-- Worst Slack: +0.8 ns
-- Critical Cells: 12 gate levels
+*Critical Path Details:*
+- *Path:* data_reg[7] → arithmetic_logic → data_out[0]
+- *Total Delay:* 8.7 ns
+- *Clock Period:* 10.0 ns  
+- *Worst Slack:* +0.8 ns
+- *Critical Cells:* 12 gate levels
 
-Critical Path Breakdown:
+*Critical Path Breakdown:*
 
 Startpoint: data_reg_reg[7] (rising edge-triggered flip-flop)
 Endpoint:   data_out_reg[0] (rising edge-triggered flip-flop)
@@ -221,34 +221,34 @@ Delay    Type        Cell/Pin
 
 ### Timing Graph Observations
 
-🔹 Setup Timing Graph Analysis:
+*🔹 Setup Timing Graph Analysis:*
 - All paths meet setup requirements with positive slack
 - Worst-case slack: +0.8 ns on data_out[0] path
 - Design has comfortable timing margin at 100MHz
 
-🔹 Hold Timing Graph Analysis:
+*🔹 Hold Timing Graph Analysis:*
 - All hold checks pass with positive slack
 - Minimum hold slack: +0.2 ns
 - No hold violations detected
 
-🔹 Clock Network Analysis:
+*🔹 Clock Network Analysis:*
 - Clock skew: 0.3 ns between farthest registers
 - Clock latency: 0.8 ns from source to endpoint
 - Clock uncertainty: 0.5 ns setup / 0.1 ns hold
 
 ### Key Findings and Recommendations
 
-✅ Timing Requirements MET:
+*✅ Timing Requirements MET:*
 - Maximum frequency: ~115MHz (8.7 ns critical path)
 - Setup slack: All positive (min +0.8 ns)
 - Hold slack: All positive (min +0.2 ns)
 
-🔧 Optimization Opportunities:
-1. Critical Path: data_out[0] has longest delay (8.7 ns)
-2. Bottleneck: Arithmetic logic chain with multiple AND/OR gates
-3. Suggestion: Pipeline the arithmetic operations for higher frequency
+*🔧 Optimization Opportunities:*
+1. *Critical Path:* data_out[0] has longest delay (8.7 ns)
+2. *Bottleneck:* Arithmetic logic chain with multiple AND/OR gates
+3. *Suggestion:* Pipeline the arithmetic operations for higher frequency
 
-📊 Performance Summary:
+*📊 Performance Summary:*
 
 Clock Frequency: 100 MHz (constrained)
 Maximum Frequency: 115 MHz (achievable)
@@ -265,43 +265,43 @@ Number of Violating Paths: 0
 
 | Task | Status | Results |
 |------|--------|---------|
-| Post-Synthesis GLS | ✅ COMPLETED | Functional equivalence verified |
-| STA Fundamentals | ✅ COMPLETED | Key concepts documented |
-| OpenSTA Timing Analysis | ✅ COMPLETED | Timing graphs and reports generated |
+| *Post-Synthesis GLS* | ✅ COMPLETED | Functional equivalence verified |
+| *STA Fundamentals* | ✅ COMPLETED | Key concepts documented |
+| *OpenSTA Timing Analysis* | ✅ COMPLETED | Timing graphs and reports generated |
 
 ### Key Achievements
 
-1. ✅ GLS Validation: Successfully verified gate-level netlist functionality matches RTL design
-2. ✅ STA Knowledge: Understood fundamental timing analysis concepts including setup/hold, slack, and timing paths  
-3. ✅ Practical Implementation: Generated timing graphs and reports using OpenSTA with proper constraints
-4. ✅ Timing Closure: Confirmed design meets timing requirements at 100MHz with positive slack margins
+1. *✅ GLS Validation:* Successfully verified gate-level netlist functionality matches RTL design
+2. *✅ STA Knowledge:* Understood fundamental timing analysis concepts including setup/hold, slack, and timing paths  
+3. *✅ Practical Implementation:* Generated timing graphs and reports using OpenSTA with proper constraints
+4. *✅ Timing Closure:* Confirmed design meets timing requirements at 100MHz with positive slack margins
 
 ### Tools and Technologies Used
-- Synthesis: Yosys with ABC mapping
-- Simulation: Icarus Verilog for GLS
-- Timing Analysis: OpenSTA for static timing analysis
-- Waveform Viewing: GTKWave
-- Technology: sky130 PDK for cell libraries
+- *Synthesis:* Yosys with ABC mapping
+- *Simulation:* Icarus Verilog for GLS
+- *Timing Analysis:* OpenSTA for static timing analysis
+- *Waveform Viewing:* GTKWave
+- *Technology:* sky130 PDK for cell libraries
 
 ---
-Completion Date: October 11, 2025  
-Student ID: [Your Student ID]  
-All tasks completed successfully with positive timing margins and functional correctness verified.
+*Completion Date:* October 11, 2025  
+*Student ID:* [Your Student ID]  
+*All tasks completed successfully with positive timing margins and functional correctness verified.*
 
 
 
 
 2.1
 Objective
-To understand and perform Gate-Level Simulation (GLS) after synthesis, validate functionality, and get introduced to Static Timing Analysis (STA) concepts with practical experiments.
+To understand and perform *Gate-Level Simulation* (GLS) after synthesis, validate functionality, and get introduced to *Static Timing Analysis* (STA) concepts with practical experiments.
 Part 1 – Post-Synthesis GLS
 Synthesis Results
-Design: BabySoC  
-Synthesis Tool: Yosys ABC  
-Technology: Generic Gate Library  
-Synthesis Date: 2025-10-11  
+*Design:* BabySoC  
+*Synthesis Tool:* Yosys ABC  
+*Technology:* Generic Gate Library  
+*Synthesis Date:* 2025-10-11  
 
-Synthesis Log Summary:
+*Synthesis Log Summary:*
 
 === babySoC Synthesis Report ===
 
@@ -324,16 +324,16 @@ Minimum path delay: 0.8 ns
 
 ### Gate-Level Simulation (GLS) Results
 
-GLS Tool: Icarus Verilog  
-Test Vectors Applied: 3 comprehensive test cases  
-Simulation Duration: 200 time units  
+*GLS Tool:* Icarus Verilog  
+*Test Vectors Applied:* 3 comprehensive test cases  
+*Simulation Duration:* 200 time units  
 
-Test Case Results:
-- Test 1: Input = 8'h0A (10) → Output = 8'h15 (21) ✅ PASS
-- Test 2: Input = 8'h1F (31) → Output = 8'h3F (63) ✅ PASS  
-- Test 3: Input = 8'h08 (8) → Output = 8'h11 (17) ✅ PASS
+*Test Case Results:*
+- *Test 1:* Input = 8'h0A (10) → Output = 8'h15 (21) ✅ PASS
+- *Test 2:* Input = 8'h1F (31) → Output = 8'h3F (63) ✅ PASS  
+- *Test 3:* Input = 8'h08 (8) → Output = 8'h11 (17) ✅ PASS
 
-GLS Waveform Observations:
+*GLS Waveform Observations:*
 - All control signals (valid_out, ready) transition correctly
 - Data outputs appear after expected clock cycles
 - No timing violations detected
@@ -341,7 +341,7 @@ GLS Waveform Observations:
 
 ### Functional vs GLS Comparison
 
-VERIFICATION RESULT: ✅ FULLY MATCHING
+*VERIFICATION RESULT: ✅ FULLY MATCHING*
 
 | Aspect | Functional Simulation | Gate-Level Simulation | Status |
 |--------|----------------------|----------------------|---------|
@@ -350,7 +350,7 @@ VERIFICATION RESULT: ✅ FULLY MATCHING
 | Reset Behavior | Immediate clear | Immediate clear | ✅ Match |
 | State Transitions | IDLE→PROCESS→DONE | IDLE→PROCESS→DONE | ✅ Match |
 
-Comparison Summary:
+*Comparison Summary:*
 The Gate-Level Simulation outputs perfectly match the functional simulation results, confirming that:
 - The synthesized netlist maintains correct logical functionality
 - No functional errors were introduced during synthesis
@@ -359,10 +359,10 @@ The Gate-Level Simulation outputs perfectly match the functional simulation resu
 
 ### Key Findings
 
-1. Functional Equivalence: The synthesized gate-level netlist behaves identically to the RTL design
-2. Timing Accuracy: GLS provides more realistic timing information including gate delays
-3. Design Integrity: Synthesis process preserved the intended functionality without corruption
-4. Verification Complete: BabySoC design is verified at both RTL and gate levels
+1. *Functional Equivalence:* The synthesized gate-level netlist behaves identically to the RTL design
+2. *Timing Accuracy:* GLS provides more realistic timing information including gate delays
+3. *Design Integrity:* Synthesis process preserved the intended functionality without corruption
+4. *Verification Complete:* BabySoC design is verified at both RTL and gate levels
 
 ---
 
@@ -370,25 +370,25 @@ The Gate-Level Simulation outputs perfectly match the functional simulation resu
 
 ### Static Timing Analysis Concepts
 
-Setup Time Check: 
+*Setup Time Check:* 
 - Maximum path delay: 2.3 ns
 - Required setup: 1.5 ns
 - Slack: +0.8 ns ✅ MET
 
-Hold Time Check:
+*Hold Time Check:*
 - Minimum path delay: 0.8 ns  
 - Required hold: 0.5 ns
 - Slack: +0.3 ns ✅ MET
 
-Critical Path: 
+*Critical Path:* 
 - Data processing logic through arithmetic operations
 - Path: data_reg → arithmetic logic → data_out
 
 ### Tools Used
-- Synthesis: Yosys with ABC mapping
-- Simulation: Icarus Verilog
-- Waveform Viewing: GTKWave
-- Timing Analysis: Basic static analysis using synthesis reports
+- *Synthesis:* Yosys with ABC mapping
+- *Simulation:* Icarus Verilog
+- *Waveform Viewing:* GTKWave
+- *Timing Analysis:* Basic static analysis using synthesis reports
 
 ### Conclusion
 
@@ -402,6 +402,9 @@ The Week 3 task has been successfully completed with:
 The BabySoC design is confirmed to be functionally correct at the gate level and meets basic timing requirements for the target technology.
 
 ---
-Completion Date: October 11, 2025  
-Tools: Yosys, Icarus Verilog, GTKWave  
-Status: ✅ ALL TASKS COMPLETED SUCCESSFULLY
+*Completion Date:* October 10, 2025  
+*Tools:* Yosys, Icarus Verilog, GTKWave  
+*Status:* ✅ ALL TASKS COMPLETED SUCCESSFULLY
+
+
+
